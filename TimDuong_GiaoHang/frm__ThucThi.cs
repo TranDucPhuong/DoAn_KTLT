@@ -12,6 +12,7 @@ namespace TimDuong_GiaoHang
 {
     public partial class frm__ThucThi : Form
     {
+        //Hello
         public List<ThanhPho> list_TP;//list lưu các các thành phố được khởi tạo
         public List<ChuTrinh> lst_Chutrinh;//list chu trình giao hàng
         PictureBox[] pic_tp;
