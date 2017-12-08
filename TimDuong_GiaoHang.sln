@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimDuong_GiaoHang", "TimDuong_GiaoHang\TimDuong_GiaoHang.csproj", "{B2F9AADE-367A-4D77-8369-54F24E5B5BAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaNoi_Tower", "..\HaNoi_Tower\HaNoi_Tower\HaNoi_Tower.csproj", "{F6819E91-8A53-4B7D-B251-6FC884D28FFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2F9AADE-367A-4D77-8369-54F24E5B5BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F9AADE-367A-4D77-8369-54F24E5B5BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F9AADE-367A-4D77-8369-54F24E5B5BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F9AADE-367A-4D77-8369-54F24E5B5BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6819E91-8A53-4B7D-B251-6FC884D28FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6819E91-8A53-4B7D-B251-6FC884D28FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6819E91-8A53-4B7D-B251-6FC884D28FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6819E91-8A53-4B7D-B251-6FC884D28FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
