@@ -36,10 +36,21 @@ namespace TimDuong_GiaoHang
             g = CreateGraphics();
             //Pen p = new Pen(Brushes.Black, 4);
             p.StartCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
+            //if (a.X > b.X)
+            //{
+            //    Point start = new Point(b.X + 25, b.Y + 63);
+            //    Point stop = new Point(a.X + 25, a.Y);
+            //    g.DrawLine(p, start, stop);
+            //}
+            //else
+            //{
+                
+            //}
+
             if (a.Y > b.Y)
             {
-                Point start = new Point(b.X + 25, b.Y + 63);
-                Point stop = new Point(a.X + 25, a.Y);
+                Point start = new Point(b.X + 25, b.Y + 32);
+                Point stop = new Point(a.X, a.Y + 63);
                 g.DrawLine(p, start, stop);
             }
             else

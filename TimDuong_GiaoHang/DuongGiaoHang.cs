@@ -198,32 +198,7 @@ namespace TimDuong_GiaoHang
             timer.Start();//cho timer chạy
             th.Show();
         }
-        public void Draw(Point a, Point b,Pen p)//vẽ đường đi dựa theo tọa độ
-        {
-            g = CreateGraphics();
-            //Pen p = new Pen(Brushes.Black, 4);
-            p.StartCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
-            if (a.Y > b.Y)
-            {
-                Point start = new Point(b.X + 25, b.Y + 63);
-                Point stop = new Point(a.X + 25, a.Y);
-                g.DrawLine(p, start, stop);
-            }
-            else
-                if (a.Y < b.Y)
-                {
-                    Point start = new Point(b.X + 25, b.Y);
-                    Point stop = new Point(a.X + 25, a.Y + 66);
-                    g.DrawLine(p, start, stop);
-                }
-                else
-                {
-                    Point start = new Point(b.X , b.Y+30);
-                    Point stop = new Point(a.X+25, a.Y+30 );
-                    g.DrawLine(p, start, stop);
-                }
-            
-        }
+        
 
         int chutrinh = 0;//giá trị lưu sô chu trình
         private void timer_Tick(object sender, EventArgs e)//sựu kiện tick của timer
