@@ -17,11 +17,12 @@ namespace TimDuong_GiaoHang
         public List<ChuTrinh> lst_Chutrinh;//list chu trình giao hàng
         PictureBox[] pic_tp;
         Graphics g;//đối tượng graphics đễ vẽ Arrow
-
+        //==============================================================================================================
         public frm__ThucThi()
         {
             InitializeComponent();
         }
+        //==============================================================================================================
         void khoitao()
         {
             pic_tp = new PictureBox[] { pic_1, pic_2, pic_3, pic_4, pic_5, pic_6, pic_7, pic_8, pic_9, pic_10 };//khởi tạo mảng lưu các picture box
@@ -31,26 +32,16 @@ namespace TimDuong_GiaoHang
                 pic_tp[i].Visible = true;
             }
         }
+        //==============================================================================================================
         public void Draw(Point a, Point b, Pen p)//vẽ đường đi dựa theo tọa độ
         {
             g = CreateGraphics();
             //Pen p = new Pen(Brushes.Black, 4);
             p.StartCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
-            //if (a.X > b.X)
-            //{
-            //    Point start = new Point(b.X + 25, b.Y + 63);
-            //    Point stop = new Point(a.X + 25, a.Y);
-            //    g.DrawLine(p, start, stop);
-            //}
-            //else
-            //{
-                
-            //}
-
             if (a.Y > b.Y)
             {
-                Point start = new Point(b.X + 25, b.Y + 32);
-                Point stop = new Point(a.X, a.Y + 63);
+                Point start = new Point(b.X + 25, b.Y + 63);
+                Point stop = new Point(a.X + 25, a.Y);
                 g.DrawLine(p, start, stop);
             }
             else
@@ -68,11 +59,12 @@ namespace TimDuong_GiaoHang
                 }
 
         }
+        //==============================================================================================================
         private void frm__ThucThi_Load(object sender, EventArgs e)
         {
             khoitao();
         }
-
+        //==============================================================================================================
         int chutrinh = 0;//giá trị lưu sô chu trình
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -101,6 +93,7 @@ namespace TimDuong_GiaoHang
             Draw(x, y, p);//vẽ đường đi dựa theo hai tọa độ 
             chutrinh++;
         }
+        //==============================================================================================================
     }
 
 

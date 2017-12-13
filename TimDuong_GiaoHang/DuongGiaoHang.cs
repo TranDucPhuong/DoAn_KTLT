@@ -16,7 +16,7 @@ namespace TimDuong_GiaoHang
         {
             InitializeComponent();
         }
-        
+        //==============================================================================================================
         ToaDo[] cbb_toado;//Mang lưu các đối tượng combobox tọa độ
         int SoTP = 0;//giá trị lưu số thành phố
         List<ThanhPho> lst_Thanhpho;//list lưu các các thành phố được khởi tạo
@@ -25,7 +25,7 @@ namespace TimDuong_GiaoHang
         //List<PictureBox> lThanhPho = new List<PictureBox>();//list lưu  các thành phố được khởi tạo
         TimDuongGiaoHang timduong;//đối tượng tìm đường giao hàng
         Graphics g;//đối tượng graphics đễ vẽ Arrow
-
+        //==============================================================================================================
         void load()//Hàm khởi tạo các giá trị ban đầu
         {
             cbb_toado = new ToaDo[]//khởi tạo mảng lưu các combobox tọa độ
@@ -51,7 +51,7 @@ namespace TimDuong_GiaoHang
             but_start.Enabled = false;
             cbb_sotp.Enabled = true;
         }
-
+        //==============================================================================================================
         void Nhap_cbb_XY()//nhập dữ liệu cho các combobox
         {
             List<string> x = new List<string>() {"0,5","1","1,5","2","2,5","3","3,5","4","4,5","5","5,5","6","6,5","7","7,5","8","8,5","9"};
@@ -72,11 +72,13 @@ namespace TimDuong_GiaoHang
                 }
             }
         }
+        //==============================================================================================================
         private void TimDuong_GiaoHang_Load(object sender, EventArgs e)//sự kiện load
         {
            
             load();
         }
+        //==============================================================================================================
         void Draw_Line()//vẽ đường thẳng
         {
             Point x = new Point(30, 30);
@@ -87,6 +89,7 @@ namespace TimDuong_GiaoHang
             g.DrawLine(p,x,y);
             g.DrawLine(p, x, z);
         }
+        //==============================================================================================================
         private void but_nhapsotp_Click(object sender, EventArgs e)//sự kiện click của button nhập sô thành phố
         {
             lst_Thanhpho = new List<ThanhPho>();//khởi tạo đối tượng
@@ -108,12 +111,13 @@ namespace TimDuong_GiaoHang
             cbb_speed.SelectedIndex = 0;
            // Draw_Line();
         }
-
+        //==============================================================================================================
         private void cbb_sotp_SelectedIndexChanged(object sender, EventArgs e)//sự kiện tay đỗi giá trị index được chọn của cbb_sotp
         {
             SoTP = int.Parse(cbb_sotp.Text);
             but_nhapsotp.Enabled = true;
         }
+        //==============================================================================================================
         void Nhap_cbb_start()//Nhập dữ liệu cho combobox lưu giá trị tên thành phố bắt đầu đi
         {
             List<string> name = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "K" };
@@ -122,6 +126,7 @@ namespace TimDuong_GiaoHang
                 cbb_start.Items.Add(name[i]);
             }
         }
+        //==============================================================================================================
         Char Tentp(int i)
         {
             switch (i)
@@ -149,6 +154,7 @@ namespace TimDuong_GiaoHang
             }
             return '_';
         }
+        //==============================================================================================================
         private void but_khoitao_Click(object sender, EventArgs e)//sự kiện click của button Khởi tạo thành phố
         {
             for (int i = 0; i < SoTP; i++)//tạo số thành phố dựa theo cbb_sotp
@@ -171,7 +177,7 @@ namespace TimDuong_GiaoHang
             but_start.Enabled = true;
             
         }
-
+        //==============================================================================================================
         bool kiemtra_cbb_ToaDo()//khiểm tra các combobox được khởi tạo có rỗng hay không
         {
             for (int i = 0; i < SoTP; i++)
@@ -181,11 +187,12 @@ namespace TimDuong_GiaoHang
             }
             return true;
         }
+        //==============================================================================================================
         private void SelectedIndexChanged(object sender, EventArgs e)//sự kiện thay đỗi index giá trị được chọn của các cbb_X và cbb_Y
         {
             but_khoitao.Enabled = kiemtra_cbb_ToaDo();//gán giá trị Enable của button khởi tạo các thành phố bằng giá trị trả về của hàm kiểm tra các cbb_X, cbb_Y
         }
-
+        //==============================================================================================================
         private void but_start_Click(object sender, EventArgs e)
         {
             but_start.Enabled = false;
@@ -198,7 +205,7 @@ namespace TimDuong_GiaoHang
             timer.Start();//cho timer chạy
             th.Show();
         }
-        
+        //==============================================================================================================
 
         int chutrinh = 0;//giá trị lưu sô chu trình
         private void timer_Tick(object sender, EventArgs e)//sựu kiện tick của timer
@@ -217,7 +224,7 @@ namespace TimDuong_GiaoHang
             lst_chutrinh.Items[chutrinh].SubItems.Add(kc);
             chutrinh++;//tăng gái trị chu sô trình lên
         }
-
+        //==============================================================================================================
         private void but_reset_Click(object sender, EventArgs e)
         {
             foreach (Control b in grp_info.Controls)
@@ -243,14 +250,14 @@ namespace TimDuong_GiaoHang
             cbb_sotp.Enabled = true;
             chutrinh = 0;
         }
-
+        //==============================================================================================================
         private void but_canh_Click(object sender, EventArgs e)
         {
             frm_Canh c = new frm_Canh();
             c.lst = lst_Canh;
             c.Show();
         }
-
+        //==============================================================================================================
         
     }
     public class ToaDo //class lưu combobox các giá trị tọa độ của 1 thành phố
@@ -274,6 +281,7 @@ namespace TimDuong_GiaoHang
             y = b;
         }
     }
+    //==============================================================================================================
     public class ThanhPho//class lưu các thông tin của một thành phố
     {
         String name;
@@ -311,6 +319,7 @@ namespace TimDuong_GiaoHang
             bac = 0;
         }
     }
+    //==============================================================================================================
     public class ChuTrinh
     {
         ThanhPho start;
@@ -346,6 +355,7 @@ namespace TimDuong_GiaoHang
             stop = new ThanhPho();
         }
     }//class lưu thông tin của 1 chu trình
+    //==============================================================================================================
     public class TimDuongGiaoHang//class sử lý các thao tác tìm chu trình và tìm cạnh
     {
         List<ThanhPho> lThanhPho;
@@ -557,4 +567,5 @@ namespace TimDuong_GiaoHang
             }
         }
     }
+    //==============================================================================================================
 }
